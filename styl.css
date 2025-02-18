@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    transition: background 0.5s ease;
+}
+
+.container {
+    text-align: center;
+    color: orange;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+/* Контейнер карточек */
+.cards-wrapper {
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+    flex-wrap: wrap; /* Позволяет карточкам переноситься на новую строку */
+}
+
+/* Карточки */
+.card {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 35px ;
+    border-color: aliceblue;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s;
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Полупрозрачная белая обводка */
+
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Усиленная тень при наведении */
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+}
+
+p {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Прогресс-бар */
+.progress-bar {
+    width: 300px;
+    height: 5px;
+    background: gray;
+    margin: 60px auto;
+    border-radius: 10px;
+    position: relative;
+}
+
+.progress {
+    height: 5px;
+    background: blue;
+    width: 0%;
+    transition: width 0.1s;
+    border-radius: 10px;
+}
+
+/* 📱 Адаптивные стили */
+@media (max-width: 1024px) {
+    .cards-wrapper {
+        gap: 40px; /* Уменьшаем расстояние между карточками */
+    }
+
+    .card {
+        width: 200px;
+        height: 200px;
+    }
+
+    .icon {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .cards-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .card {
+        width: 80%;
+        height: 180px;
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .progress-bar {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        width: 90%;
+        height: 160px;
+    }
+
+    .icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .progress-bar {
+        width: 90%;
+    }
+}
