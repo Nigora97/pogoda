@@ -72,7 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         progressBar.addEventListener("input", () => {
-            audio.volume = progressBar.value;
+            if (currentAudio) {
+                currentAudio.volume = progressBar.value;
+            }
         });
     });
 
